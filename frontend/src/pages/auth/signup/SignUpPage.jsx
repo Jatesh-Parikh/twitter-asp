@@ -32,7 +32,9 @@ const SignUpPage = () => {
         });
 
         const data = await res.json();
-        if (!res.ok) throw new Error(data.error || "Failed to create account");
+        if (!res.ok) {
+          throw new Error(data.error || "Failed to create an account");
+        }
         console.log(data);
         return data;
       } catch (error) {
@@ -51,7 +53,7 @@ const SignUpPage = () => {
   });
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // page won't reload
+    e.preventDefault();
     mutate(formData);
   };
 
