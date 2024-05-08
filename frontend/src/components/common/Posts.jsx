@@ -44,6 +44,10 @@ const Posts = ({ feedType, username, userId }) => {
     },
   });
 
+  // useEffect(() => {
+  //   numberOfPosts(posts?.length || 0);
+  // }, [numberOfPosts, posts]);
+
   useEffect(() => {
     refetch();
   }, [feedType, refetch, username]);
@@ -70,4 +74,5 @@ const Posts = ({ feedType, username, userId }) => {
     </>
   );
 };
+
 export default Posts;
